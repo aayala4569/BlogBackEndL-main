@@ -185,6 +185,19 @@ namespace BlogBackEndL.Services
           return result;
         }
 
-       
+        public UseridDTO GetuserIdDTOByUsername(string? username)
+        {
+           var UserInfo = new UseridDTO();
+           var foundUser = _context.UserInfor.SingleOrDefault(user => user.Username == username );
+           UserInfo.UserID = foundUser.Id;
+           UserInfo.Publishername = foundUser.Username;
+
+           return UserInfo;
+        }
+
+        internal IEnumerable<BlogitemModel> GetItemsByUserID(int userID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

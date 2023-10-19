@@ -23,6 +23,19 @@ namespace BlogBackEndL.Controllers
         {
             _data = dataFromService;
         }
+
+        //GetUserByUsername
+        [HttpGet("userbyusername/{username}")]
+
+        public UseridDTO GetuserIdDTOByUsername(string username)
+        {
+            return _data.GetuserIdDTOByUsername(username);
+        }
+
+
+
+
+
         //Add a user
         [HttpPost("AddUsers")]
 
@@ -71,6 +84,11 @@ namespace BlogBackEndL.Controllers
         {
             return _data.UpdateUsername(id, username);
         }
+
+   
+
+
+
     }
 
 }
